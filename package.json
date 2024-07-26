@@ -1,0 +1,37 @@
+{
+  "name": "poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "headed": "npx playright test --headed",
+    "smokeTests": "npx playwright test --grep @smoke",
+    "codegen": "npx playwright codegen",
+    "traceView": "npx playwright show-report",
+    "PlaywrightTestRunner": "npx playwright test --ui",
+    "allure-playwright": "npx playwright test --reporter=allure-playwright",
+    "generate-report": "allure generate allure-results -o allure-report --clean",
+    "open-report": "allure open allure-report",
+    "allure-report": "npm run allure-playwright && npm run generate-report && npm run open-report",
+    "firefox": "npm run clean && npx playwright test --project=firefox",
+    "chromium": "npx playwright test --project=chromium",
+    "webkit": "npx playwright test --project=webkit",
+    "format:fix": "npx prettier --write",
+    "format": "npx prettier --check",
+    "lint": "npx eslint . ",
+    "lint:fix": "npx eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^20.14.12",
+    "allure-playwright": "^2.15.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "allure-commandline": "^2.13.8"
+  }
+}
